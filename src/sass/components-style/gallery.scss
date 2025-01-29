@@ -1,0 +1,59 @@
+@use "../global" as *;
+@use "../mixins" as *;
+
+.gallery {
+	position: relative;
+	&__main-container {
+	}
+	&__container {
+	}
+	&__photo {
+		width: 230px;
+		height: 280px;
+		border-radius: 8px;
+		cursor: pointer;
+		@include rwd-min-width(576px) {
+			width: 300px;
+			height: 350px;
+		}
+		@include rwd-min-width(768px) {
+			width: 300px;
+			height: 400px;
+		}
+	}
+	.clicked-photo {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.9);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 100;
+	}
+	.clicked-photo img {
+		max-width: 80%;
+		max-height: 80%;
+		border-radius: 8px;
+		@include rwd-max-width(376px) {
+			max-width: 90%;
+		}
+		@include rwd-max-width(768px) {
+			max-height: 60%;
+		}
+	}
+	&__waves1 {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: -1;
+	}
+	&__waves2 {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+	}
+}

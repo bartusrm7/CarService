@@ -1,0 +1,77 @@
+@use "../global" as *;
+@use "../mixins" as *;
+
+.services {
+	position: relative;
+	background-color: $main-very-light-color;
+	color: $main-very-dark-color;
+	&__main-container {
+		margin: 150px 0 100px;
+	}
+	&__label {
+		position: absolute;
+		top: 0;
+		right: 50%;
+		transform: translateX(50%);
+	}
+	&__container {
+		@include rwd-max-width(576px) {
+			margin: 0 1em;
+		}
+	}
+	&__service-name {
+		@include rwd-min-width(576px) {
+			margin-right: 1em;
+		}
+	}
+	&__service-description {
+		@include rwd-min-width(576px) {
+			max-width: 300px;
+		}
+		@include rwd-min-width(768px) {
+			max-width: 400px;
+		}
+	}
+	&__mechanic-tools-icon {
+		position: absolute;
+		background-position: center;
+		background-repeat: no-repeat;
+		opacity: 0.04;
+		@include rwd-max-width(768px) {
+			display: none;
+		}
+	}
+	.icon1 {
+		top: 5%;
+		left: 10%;
+		width: 250px;
+		height: 250px;
+		background-image: url("../../../mechanic-tool2-small.png");
+		@include rwd-min-width(992px) {
+			background-image: url("../../../mechanic-tool2-big.png");
+		}
+	}
+	.icon2 {
+		bottom: -5%;
+		right: 40%;
+		width: 350px;
+		height: 350px;
+		background-image: url("../../../mechanic-tool1-small.png");
+		opacity: 0.03;
+		@include rwd-min-width(992px) {
+			background-image: url("../../../mechanic-tool1-big.png");
+		}
+	}
+	.icon3 {
+		top: 15%;
+		right: 0;
+		width: 350px;
+		height: 350px;
+		background-image: url("../../../mechanic-tool2-small.png");
+		transform: rotate(180deg);
+		opacity: 0.04;
+		@include rwd-min-width(992px) {
+			background-image: url("../../../mechanic-tool2-big.png");
+		}
+	}
+}

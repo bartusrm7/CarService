@@ -1,0 +1,8 @@
+@use "../global" as *;
+@use "../mixins" as *;
+
+footer {
+	background-color: $main-very-light-color;
+	color: $main-very-dark-color;
+	font-weight: bold;
+}

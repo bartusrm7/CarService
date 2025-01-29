@@ -1,0 +1,74 @@
+@use "../global" as *;
+@use "../mixins" as *;
+
+.contact {
+	background-color: $main-dark-color;
+	color: $main-very-light-color;
+	&__main-container {
+		margin: 50px 0 50px;
+	}
+	&__label {
+		position: absolute;
+		top: 0;
+		right: 50%;
+		transform: translateX(50%);
+	}
+	&__container {
+		margin-bottom: 1em;
+		@include rwd-min-width(768px) {
+			margin: 0.5em auto;
+			width: 500px;
+		}
+		@include rwd-min-width(1200px) {
+			margin: 0.5em auto;
+			width: 700px;
+		}
+	}
+	&__service-name {
+		font-weight: bold;
+		@include rwd-min-width(576px) {
+			margin-right: 2em;
+		}
+	}
+	&__icon {
+		margin-right: 0.1em;
+	}
+	&__service-description {
+		a {
+			transition: color 0.3s;
+			color: $main-very-light-color;
+			font-weight: bold;
+			&:hover {
+				color: $main-very-dark-color;
+			}
+		}
+
+		@include rwd-min-width(576px) {
+			max-width: 300px;
+		}
+		@include rwd-min-width(768px) {
+			max-width: 400px;
+		}
+		@include rwd-min-width(1200px) {
+			max-width: 400px;
+		}
+	}
+	.map {
+		margin: 0 auto;
+		height: 350px;
+		border: 3px solid $main-very-light-color;
+		border-radius: 8px;
+		z-index: 0;
+		@include rwd-min-width(576px) {
+			height: 450px;
+		}
+		@include rwd-min-width(768px) {
+			max-width: 1000px;
+			height: 500px;
+		}
+		@include rwd-min-width(1400px) {
+			max-width: 1200px;
+			height: 650px;
+		}
+	}
+}
